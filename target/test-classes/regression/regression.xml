@@ -1,0 +1,31 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Regression" parallel="tests" thread-count="3">
+
+    <test name="[SN] Create player">
+        <classes>
+            <class name="com.interview.playercontroller.CreatePlayerTests"/>
+        </classes>
+    </test>
+    <test name="[SN] Delete player">
+        <classes>
+            <class name="com.interview.playercontroller.DeletePlayerNegativeTests"/>
+        </classes>
+    </test>
+    <test name="[SN] Get all players">
+        <classes>
+            <class name="com.interview.playercontroller.GetAllPlayersTests"/>
+        </classes>
+    </test>
+    <test name="[SN] Get player id">
+        <classes>
+            <class name="com.interview.playercontroller.GetPlayerByPlayerIdTests"/>
+        </classes>
+    </test>
+    <test name="[SN] Update player">
+        <classes>
+            <class name="com.interview.playercontroller.UpdatePlayerTest"/>
+        </classes>
+    </test>
+
+
+</suite>
