@@ -23,9 +23,9 @@ public class GetAllPlayersTests {
 
     @Test
     public void checkGettingAllPlayers() {
-        Player expectedPlayer = new Player.Builder(1, "testSupervisor", "male", 28).build();
+        Player expectedPlayer = new Player.Builder(1003435220, "g2SCT", "male", 17).build();
         GetAllPlayersResponse getAllPlayersResponse = api.playerControllerApi.getAllPlayers();
         Assert.assertEquals(getAllPlayersResponse.players.size(), 2, "Wrong players size");
-        assertReflectionEquals(getAllPlayersResponse.players.get(0), expectedPlayer, IGNORE_DEFAULTS);
+        assertReflectionEquals(getAllPlayersResponse.players.get(1), expectedPlayer, IGNORE_DEFAULTS);
     }
 }
