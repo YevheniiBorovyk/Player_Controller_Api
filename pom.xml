@@ -1,22 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>testAutomationApi</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>qa.player</groupId>
+    <artifactId>qa.playr.api</artifactId>
+    <version>0.0.1</version>
+
+    <distributionManagement>
+        <repository>
+            <id>artifactory</id>
+            <name>artifactory-releases</name>
+            <url>https://artifactory.infrateam.xyz/artifactory/maven-qa</url>
+        </repository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>jcenter</id>
+            <url>https://jcenter.bintray.com/</url>
+        </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+        <repository>
+            <id>artifactory</id>
+            <url>https://artifactory.infrateam.xyz/artifactory/maven-qa</url>
+        </repository>
+    </repositories>
 
     <properties>
         <jdk.source.version>11</jdk.source.version>
         <jdk.target.version>11</jdk.target.version>
-        <maven.compiler.target>11</maven.compiler.target>
+        <compiler.version>11</compiler.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <buildDirectory>${project.basedir}/target</buildDirectory>
+        <suite>test.xml</suite>
+        <resultsPatternAllure>**/allure-results</resultsPatternAllure>
+        <allure.version>2.21.0</allure.version>
         <aspectj.version>1.9.5</aspectj.version>
+        <allure.results.directory>${buildDirectory}/allure-results</allure.results.directory>
     </properties>
 
     <build>
-        <directory>${project.basedir}/target</directory>
+        <directory>${buildDirectory}</directory>
         <sourceDirectory>src/main/java</sourceDirectory>
         <testSourceDirectory>src/test/java</testSourceDirectory>
         <resources>
@@ -73,7 +102,7 @@
                         -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
                     </argLine>
                     <suiteXmlFiles>
-                        <suiteXmlFile>test.xml</suiteXmlFile>
+                        <suiteXmlFile>${suite}</suiteXmlFile>
                     </suiteXmlFiles>
                     <systemPropertyVariables>
                         <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
@@ -84,6 +113,14 @@
                             <name>allure.results.directory</name>
                             <value>target/allure-results</value>
                         </property>
+                        <property>
+                            <name>s3-bucket</name>
+                            <value>${s3-bucket}</value>
+                        </property>
+                        <property>
+                            <name>slackChannelId</name>
+                            <value/>
+                        </property>
                     </systemProperties>
                 </configuration>
 
@@ -91,7 +128,7 @@
                     <dependency>
                         <groupId>org.aspectj</groupId>
                         <artifactId>aspectjweaver</artifactId>
-                        <version>1.9.5</version>
+                        <version>${aspectj.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -132,19 +169,13 @@
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-testng</artifactId>
-            <version>2.21.0</version>
+            <version>${allure.version}</version>
         </dependency>
         <!-- Jackson Data Mapper -->
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-mapper-asl</artifactId>
             <version>1.9.13</version>
-        </dependency>
-        <!--converter-jackson -->
-        <dependency>
-            <groupId>com.squareup.retrofit2</groupId>
-            <artifactId>converter-jackson</artifactId>
-            <version>2.5.0</version>
         </dependency>
         <!--Java Faker -->
         <dependency>
@@ -197,5 +228,4 @@
             </properties>
         </profile>
     </profiles>
-
 </project>
