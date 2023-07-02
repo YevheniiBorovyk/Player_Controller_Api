@@ -21,8 +21,8 @@ public class UpdatePlayerTests {
     @Test
     public void checkUpdatingPlayer() {
         String newScreenName = getRandomString(4);
-        api.playerControllerApi.updatePlayer("supervisor", 1, newScreenName,"male", 28);
-        Assert.assertEquals(api.playerControllerApi.getPlayerByPlayerId(1).screenName, newScreenName,
+        api.playerControllerApi.updatePlayer("supervisor", 1003435220, newScreenName,"male", 17);
+        Assert.assertEquals(api.playerControllerApi.getPlayerByPlayerId(1003435220).screenName, newScreenName,
                 "Screen name assertion failed");
     }
 }
