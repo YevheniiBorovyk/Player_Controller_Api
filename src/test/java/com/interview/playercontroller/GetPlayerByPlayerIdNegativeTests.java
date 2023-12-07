@@ -21,8 +21,7 @@ public class GetPlayerByPlayerIdNegativeTests {
 
     @Test
     public void checkGettingPlayerByPlayerIdWithNonExistentId() {
-       Response<ResponseBody> responseBody = api.playerControllerApi
-                .getPlayerByPlayerIdAndGetErrorBody(2065855471);
+        Response<ResponseBody> responseBody = api.playerControllerApi.getPlayerByPlayerIdAndGetErrorBody(2065855471);
 
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(responseBody.message(), StringUtils.EMPTY);

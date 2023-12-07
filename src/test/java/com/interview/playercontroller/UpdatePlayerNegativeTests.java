@@ -21,8 +21,8 @@ public class UpdatePlayerNegativeTests {
 
     @Test
     public void checkUpdatePlayerWithNonExistentId() {
-        Response<UpdatePlayerResponse> updatePlayerResponse = api.playerControllerApi
-                .updatePlayerAndGetErrorBody("admin", 23);
+        Response<UpdatePlayerResponse> updatePlayerResponse =
+                api.playerControllerApi.updatePlayerAndGetErrorBody("admin", 23);
 
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(updatePlayerResponse.code(), 403);

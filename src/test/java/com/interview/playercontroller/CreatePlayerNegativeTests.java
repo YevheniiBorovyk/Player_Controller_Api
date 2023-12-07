@@ -21,8 +21,8 @@ public class CreatePlayerNegativeTests {
 
     @Test
     public void checkCreatingPlayerWithoutRequiredParameters() {
-        ErrorResponse errorResponse = api.playerControllerApi.createPlayerAndGetErrorBody("admin",
-                "21", null, null, null, null, null);
+        ErrorResponse errorResponse =
+                api.playerControllerApi.createPlayerAndGetErrorBody("admin", "21", null, null, null, null, null);
 
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(errorResponse.status, "400");

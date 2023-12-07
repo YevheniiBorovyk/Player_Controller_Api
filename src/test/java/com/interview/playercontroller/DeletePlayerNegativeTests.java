@@ -21,8 +21,8 @@ public class DeletePlayerNegativeTests {
 
     @Test
     public void checkDeletingPlayerWithNonExistentId() {
-        Response<DeletePlayerResponse> deletePlayerResponse = api.playerControllerApi
-                .deletePlayerAndGetErrorBody("admin", 2065855471);
+        Response<DeletePlayerResponse> deletePlayerResponse =
+                api.playerControllerApi.deletePlayerAndGetErrorBody("admin", 2065855471);
 
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(deletePlayerResponse.code(), 403);
