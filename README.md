@@ -23,9 +23,6 @@ bug". Capitalize the subject line and remove unnecessary punctuation marks.
 Format: [ticket id] + commit message </br>
 Example: [SN-4444] Add send invite for document group tests
 
-Format for duty fixes: prefix [Duty] + commit message</br>
-Example: [Duty] Fix locators in SignNowEditor class
-
 Use same naming logic for pull request. Also add links to Jira task and test case to pull request’s description. If
 there is no task, add short explanation of what is done.
 
