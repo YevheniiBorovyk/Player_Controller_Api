@@ -194,6 +194,19 @@
             <version>3.4.2</version>
             <scope>test</scope>
         </dependency>
+        <!--Awaitility-->
+        <dependency>
+            <groupId>org.awaitility</groupId>
+            <artifactId>awaitility</artifactId>
+            <version>4.2.0</version>
+        </dependency>
+        <!-- https://jar-download.com/artifacts/org.hamcrest/hamcrest-core/2.1/source-code -->
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+            <version>2.1</version>
+        </dependency>
+
     </dependencies>
 
     <profiles>

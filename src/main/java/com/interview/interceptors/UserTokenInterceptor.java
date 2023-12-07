@@ -1,15 +1,10 @@
 package com.interview.interceptors;
 
-import com.signnow.api.models.oauth.responses.Token;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
-import okhttp3.ResponseBody;
 
 import java.io.IOException;
-
-import static com.interview.utils.ObjectMapperUtil.getObjectMapper;
-import static com.signnow.utils.ObjectMapperUtil.getObjectMapper;
 
 public class UserTokenInterceptor implements Interceptor {
 
@@ -34,17 +29,17 @@ public class UserTokenInterceptor implements Interceptor {
         if (!isEnabled) {
             return chain.proceed(chain.request());
         }
-        if (originalRequest.method()
+/*        if (originalRequest.method()
                 .equals("POST") && originalRequest.url()
                 .toString()
-                .contains(/*"route which give you token"*/)) {
+                .contains()) {//"route which give you token"
             Response response = chain.proceed(originalRequest);
             if (response.isSuccessful()) {
                 ResponseBody body = response.peekBody(Long.MAX_VALUE);
-                accessToken = getObjectMapper().readValue(body.string(), /*Token.class*/).accessToken;
+                accessToken = getObjectMapper().readValue(body.string(), Token.class).accessToken;
                 return response;
             }
-        }
+        }*/
         if (originalRequest.headers()
                 .get("Authorization") != null && originalRequest.headers()
                 .get("Authorization")
