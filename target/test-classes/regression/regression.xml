@@ -3,42 +3,42 @@
 
     <test name="[SN] Create player">
         <classes>
-            <class name="com.interview.playercontroller.CreatePlayerTests"/>
+            <class name="com.playercontroller.CreatePlayerTests"/>
         </classes>
     </test>
     <test name="[SN] Create player negative">
         <classes>
-            <class name="com.interview.playercontroller.GetPlayerByPlayerIdNegativeTests"/>
+            <class name="com.playercontroller.GetPlayerByPlayerIdNegativeTests"/>
         </classes>
     </test>
     <test name="[SN] Delete player negative">
         <classes>
-            <class name="com.interview.playercontroller.DeletePlayerNegativeTests"/>
+            <class name="com.playercontroller.DeletePlayerNegativeTests"/>
         </classes>
     </test>
     <test name="[SN] Get all players">
         <classes>
-            <class name="com.interview.playercontroller.GetAllPlayersTests"/>
+            <class name="com.playercontroller.GetAllPlayersTests"/>
         </classes>
     </test>
     <test name="[SN] Get player by player id">
         <classes>
-            <class name="com.interview.playercontroller.GetPlayerByPlayerIdTests"/>
+            <class name="com.playercontroller.GetPlayerByPlayerIdTests"/>
         </classes>
     </test>
     <test name="[SN] Get player by player id negative">
         <classes>
-            <class name="com.interview.playercontroller.GetPlayerByPlayerIdNegativeTests"/>
+            <class name="com.playercontroller.GetPlayerByPlayerIdNegativeTests"/>
         </classes>
     </test>
     <test name="[SN] Update player">
         <classes>
-            <class name="com.interview.playercontroller.UpdatePlayerTests"/>
+            <class name="com.playercontroller.UpdatePlayerTests"/>
         </classes>
     </test>
     <test name="[SN] Update player negative">
         <classes>
-            <class name="com.interview.playercontroller.UpdatePlayerNegativeTests"/>
+            <class name="com.playercontroller.UpdatePlayerNegativeTests"/>
         </classes>
     </test>
 
