@@ -7,10 +7,21 @@ import lombok.Getter;
 @Getter
 public enum Environment {
 
-    LOCAL("http://3.68.165.45"),
     DEV(null),
     RC(null),
-    PROD(null);
+    PROD("https://conduit-api.bondaracademy.com/api/");
 
     private final String host;
+
+    public static Environment getEnvironmentByURL(String url) {
+        if (url.contains("bondaracademy.com")) {
+            return PROD;
+        } else if (url.contains("-rc")) {
+            return RC;
+        } else if (url.contains("-dev")) {
+            return DEV;
+        } else {
+            throw new IllegalArgumentException("Cannot get environment from given url: " + url);
+        }
+    }
 }

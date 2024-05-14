@@ -50,6 +50,19 @@ public class ApiHelper {
         }
     }
 
+    public static String executeAndGetRawResponseBody(Call<ResponseBody> call) {
+        try {
+            return Objects.requireNonNull(call.execute()
+                                    .body(),
+                            "Expected response body is 'null'. Call execution failed." + System.lineSeparator() +
+                                    generateCurl(call.request()))
+                    .string();
+        } catch (IOException e) {
+            throw new UncheckedIOException(
+                    ERROR_OCCURRED_WHILE_EXECUTING_REQUEST + System.lineSeparator() + generateCurl(call.request()), e);
+        }
+    }
+
     public static String generateCurl(Request request) {
         return new CurlBuilder(request.newBuilder()
                 .build(), 1024L * 1024L, new ArrayList<>(), Options.EMPTY).build();
