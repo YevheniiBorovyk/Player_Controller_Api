@@ -1,14 +1,18 @@
 package com.interceptors;
 
+import com.api.model.response.user.UserResponse;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
+import okhttp3.ResponseBody;
 
 import java.io.IOException;
 
+import static com.utils.ObjectMapperUtil.getObjectMapper;
+
 public class UserTokenInterceptor implements Interceptor {
 
-    private String accessToken;
+    private String token;
     private boolean isEnabled = true;
 
     public void isEnabled(boolean isEnabled) {
@@ -16,11 +20,11 @@ public class UserTokenInterceptor implements Interceptor {
     }
 
     public String getToken() {
-        return accessToken;
+        return token;
     }
 
     public void setToken(String token) {
-        accessToken = token;
+        this.token = token;
     }
 
     @Override
@@ -29,17 +33,20 @@ public class UserTokenInterceptor implements Interceptor {
         if (!isEnabled) {
             return chain.proceed(chain.request());
         }
-/*        if (originalRequest.method()
+        if (originalRequest.method()
                 .equals("POST") && originalRequest.url()
                 .toString()
-                .contains()) {//"route which give you token"
+                .contains("users/login")) {
             Response response = chain.proceed(originalRequest);
             if (response.isSuccessful()) {
                 ResponseBody body = response.peekBody(Long.MAX_VALUE);
-                accessToken = getObjectMapper().readValue(body.string(), Token.class).accessToken;
+                token = getObjectMapper().readValue(body.string(), UserResponse.class)
+                        .getUser()
+                        .getToken();
+                System.out.println("Token retrieved: " + token); // Логирование получения токена
                 return response;
             }
-        }*/
+        }
         if (originalRequest.headers()
                 .get("Authorization") != null && originalRequest.headers()
                 .get("Authorization")
@@ -48,7 +55,7 @@ public class UserTokenInterceptor implements Interceptor {
         } else {
             return chain.proceed(chain.request()
                     .newBuilder()
-                    .addHeader("Authorization", "Bearer " + accessToken)
+                    .addHeader("Authorization", "Bearer " + token)
                     .build());
         }
     }

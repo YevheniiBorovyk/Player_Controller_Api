@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+        xmlns="http://maven.apache.org/POM/4.0.0"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>qa.player</groupId>
-    <artifactId>qa.player.api</artifactId>
-    <version>0.0.1</version>
+    <artifactId>qa.bondaracademy.api</artifactId>
+    <version>0.0.2</version>
 
     <distributionManagement>
         <repository>
@@ -211,30 +211,24 @@
 
     <profiles>
         <profile>
-            <id>local</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <profileId>local</profileId>
-            </properties>
-        </profile>
-        <profile>
             <id>dev</id>
             <properties>
-                <profileId>dev</profileId>
+                <mvn.test.env>dev</mvn.test.env>
             </properties>
         </profile>
         <profile>
             <id>rc</id>
             <properties>
-                <profileId>rc</profileId>
+                <mvn.test.env>rc</mvn.test.env>
             </properties>
         </profile>
         <profile>
             <id>prod</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
-                <profileId>prod</profileId>
+                <mvn.test.env>prod</mvn.test.env>
             </properties>
         </profile>
     </profiles>

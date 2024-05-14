@@ -1,44 +1,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Regression" parallel="tests" thread-count="3">
+<suite name="Regression" parallel="tests" thread-count="1">
 
-    <test name="[SN] Create player">
+    <test name="Create article">
         <classes>
-            <class name="com.playercontroller.CreatePlayerTests"/>
+            <class name="com.project.CreateArticle"/>
         </classes>
     </test>
-    <test name="[SN] Create player negative">
+    <test name="Change user bio">
         <classes>
-            <class name="com.playercontroller.GetPlayerByPlayerIdNegativeTests"/>
+            <class name="com.project.ChangeUserBio"/>
         </classes>
     </test>
-    <test name="[SN] Delete player negative">
+    <test name="Select and delete article as favorite">
         <classes>
-            <class name="com.playercontroller.DeletePlayerNegativeTests"/>
-        </classes>
-    </test>
-    <test name="[SN] Get all players">
-        <classes>
-            <class name="com.playercontroller.GetAllPlayersTests"/>
-        </classes>
-    </test>
-    <test name="[SN] Get player by player id">
-        <classes>
-            <class name="com.playercontroller.GetPlayerByPlayerIdTests"/>
-        </classes>
-    </test>
-    <test name="[SN] Get player by player id negative">
-        <classes>
-            <class name="com.playercontroller.GetPlayerByPlayerIdNegativeTests"/>
-        </classes>
-    </test>
-    <test name="[SN] Update player">
-        <classes>
-            <class name="com.playercontroller.UpdatePlayerTests"/>
-        </classes>
-    </test>
-    <test name="[SN] Update player negative">
-        <classes>
-            <class name="com.playercontroller.UpdatePlayerNegativeTests"/>
+            <class name="com.project.SelectAndDeleteArticleAsFavorite"/>
         </classes>
     </test>
 
