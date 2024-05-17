@@ -3,17 +3,17 @@
 
     <test name="Create article">
         <classes>
-            <class name="com.bondaracademy.CreateArticle"/>
+            <class name="com.project.CreateArticle"/>
         </classes>
     </test>
     <test name="Change user bio">
         <classes>
-            <class name="com.bondaracademy.ChangeUserBio"/>
+            <class name="com.project.ChangeUserBio"/>
         </classes>
     </test>
     <test name="Select and delete article as favorite">
         <classes>
-            <class name="com.bondaracademy.SelectAndDeleteArticleAsFavorite"/>
+            <class name="com.project.SelectAndDeleteArticleAsFavorite"/>
         </classes>
     </test>
 
