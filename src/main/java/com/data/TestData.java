@@ -3,11 +3,6 @@ package com.data;
 import com.core.Environment;
 import lombok.extern.log4j.Log4j;
 
-import java.io.File;
-import java.nio.file.Paths;
-import java.util.Date;
-
-import static com.utils.FileUtils.createDirectory;
 import static com.utils.PropertiesUtils.getEnv;
 
 @Log4j
@@ -21,7 +16,7 @@ public class TestData {
             return Environment.valueOf(envParameter.toUpperCase());
         } catch (IllegalArgumentException e) {
             throw new ExceptionInInitializerError("Not supported environment format: [" + envParameter + "].\n" +
-                    "Please use one of these: prod / rc / dev / eval / eu / stage.");
+                    "Please use one of these: prod / rc / dev");
         }
     }
 }
