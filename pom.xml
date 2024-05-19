@@ -6,7 +6,7 @@
 
     <groupId>qa.apiproject</groupId>
     <artifactId>qa.apiproject.api</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.6</version>
 
     <distributionManagement>
         <repository>
