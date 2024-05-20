@@ -8,14 +8,6 @@
     <artifactId>qa.apiproject.api</artifactId>
     <version>0.0.6</version>
 
-    <distributionManagement>
-        <repository>
-            <id>artifactory</id>
-            <name>artifactory-releases</name>
-            <url>https://artifactory.infrateam.xyz/artifactory/maven-qa</url>
-        </repository>
-    </distributionManagement>
-
     <repositories>
         <repository>
             <id>jcenter</id>
@@ -24,10 +16,6 @@
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
-        </repository>
-        <repository>
-            <id>artifactory</id>
-            <url>https://artifactory.infrateam.xyz/artifactory/maven-qa</url>
         </repository>
     </repositories>
 

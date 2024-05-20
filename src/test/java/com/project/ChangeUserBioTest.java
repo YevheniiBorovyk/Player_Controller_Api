@@ -6,7 +6,7 @@ import com.utils.StringMan;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ChangeUserBio {
+public class ChangeUserBioTest {
 
     @Test
     public void checkChangingUserBio() {

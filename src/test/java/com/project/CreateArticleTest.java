@@ -5,7 +5,7 @@ import com.api.model.response.article.Article;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class CreateArticle {
+public class CreateArticleTest {
 
     private static final String ARTICLE_TITLE = "articleTitle";
     private static final String ARTICLE_DESCRIPTION = "articleDescription";
