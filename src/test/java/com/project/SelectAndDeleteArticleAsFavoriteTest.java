@@ -5,7 +5,7 @@ import com.api.model.response.article.Article;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class SelectAndDeleteArticleAsFavorite {
+public class SelectAndDeleteArticleAsFavoriteTest {
 
     @Test
     public void checkCreatingArticle() {
