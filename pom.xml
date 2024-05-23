@@ -3,10 +3,9 @@
         xmlns="http://maven.apache.org/POM/4.0.0"
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>qa.apiproject</groupId>
-    <artifactId>qa.apiproject.api</artifactId>
-    <version>0.0.6</version>
+    <groupId>com.apiproject</groupId>
+    <artifactId>api-java-retrofit</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
     <repositories>
         <repository>
