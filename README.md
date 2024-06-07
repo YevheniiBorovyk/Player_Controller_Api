@@ -12,7 +12,7 @@ Follow these steps to clone and set up the project:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/YOUR_USERNAME/api-java-retrofit.git
+    git clone https://github.com/YevheniiBorovyk/api-java-retrofit.git
     ```
 
 2. Build the project and install the dependencies:
